@@ -1,0 +1,33 @@
+import 'dart:io';
+
+void main() {
+  print("=== Grade Calculator ===");
+
+  stdout.write("Enter Assignment score: ");
+  double assignment = double.parse(stdin.readLineSync()!);
+
+  stdout.write("Enter Midterm score: ");
+  double midterm = double.parse(stdin.readLineSync()!);
+
+  stdout.write("Enter Final Exam score: ");
+  double finalExam = double.parse(stdin.readLineSync()!);
+
+  double average = (assignment + midterm + finalExam) / 3;
+
+  String grade;
+
+  if (average >= 90) {
+    grade = "A";
+  } else if (average >= 80) {
+    grade = "B";
+  } else if (average >= 70) {
+    grade = "C";
+  } else if (average >= 60) {
+    grade = "D";
+  } else {
+    grade = "F";
+  }
+
+  print("\nAverage Score: ${average.toStringAsFixed(2)}");
+  print("Final Grade: $grade");
+}
